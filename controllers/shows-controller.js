@@ -53,11 +53,24 @@ router.get('/:id',
   }
 )
 
-router.get('/:id/manualedit',
+router.get('/:id/edit',
   auth.restrict,
+  Shows.findByID,
   (req, res) => {
-    res.render('manualedit');
+    const show = res.locals.show;
+    console.log(show.event_date);
+    show.event_date = moment(show.event_date).format('YYYY-MM-DDTHH:mm');
+    res.render('manualedit', show);
   }
+)
+
+router.put('/:id/edit',
+auth.restrict,
+Shows.manualEdit,
+(req, res) => {
+  const show = res.locals.show;
+  res.json(show);
+}
 )
 
 module.exports = router;

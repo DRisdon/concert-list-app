@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <script type="text/javascript" src="/js/jquery.js"></script>
-  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
   <title></title>
 </head>
 
@@ -16,27 +16,30 @@
   <form class="edit-show-form">
 
     <label>Date:</label>
-    <input type="datetime-local" id="date-input">
+    <input type="datetime-local" id="date-input" value="{{event_date}}">
     <br />
 
     <label>Artist:</label>
-    <input id="artist-input">
+    <input id="artist-input" value="{{artist}}">
     <br />
 
     <label>Venue:</label>
-    <input id="venue-input">
+    <input id="venue-input" value="{{venue}}">
     <br />
 
     <label>City:</label>
-    <input id="city-input">
+    <input id="city-input" value="{{city}}">
     <br />
 
     <label>Are you going?:</label><br/>
     <select>
+      <option disabled selected value value="{{attendance}}"> -- </option>
       <option value="true">Yes</option>
       <option value="false">Maybe</option>
     </select>
     <br />
+
+      <input type="hidden" id="id-input" value={{id}} />
 
     <button type="submit">Submit</button>
   </form>

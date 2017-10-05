@@ -61,4 +61,25 @@ Shows.changeAttendance = (req, res, next) => {
   });
 }
 
+Shows.manualEdit = (req, res, next) => {
+  const user_id = req.user.id;
+  const id = req.params.id;
+  const artist = req.body.artist;
+  const venue = req.body.venue;
+  const city = req.body.city;
+  const event_date = req.body.event_date;
+  const attendance = req.body.attendance;
+
+  db.one(
+    `UPDATE concerts
+    SET artist = $1, venue = $2, city = $3, event_date = $4, user_id = $5, attendance = $6
+    WHERE id = $7 and user_id = $5 RETURNING id`,
+    [artist, venue, city, event_date, user_id, attendance, id]
+  ).then((show) => {
+      console.log('returned new show: ', show);
+      res.locals.show = show;
+      next();
+  });
+}
+
 module.exports = Shows;

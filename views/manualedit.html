@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <title></title>
+</head>
+
+<body>
+  <a href="/users/logout" class="logout">logout</a>
+  <h5> Edit concert: </h5>
+
+  <form class="edit-show-form">
+
+    <label>Date:</label>
+    <input type="datetime-local" id="date-input">
+    <br />
+
+    <label>Artist:</label>
+    <input id="artist-input">
+    <br />
+
+    <label>Venue:</label>
+    <input id="venue-input">
+    <br />
+
+    <label>City:</label>
+    <input id="city-input">
+    <br />
+
+    <label>Are you going?:</label><br/>
+    <select>
+      <option value="true">Yes</option>
+      <option value="false">Maybe</option>
+    </select>
+    <br />
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+
+</html>

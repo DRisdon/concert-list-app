@@ -7,7 +7,7 @@ const auth = require('../services/auth');
 // Sign up page.
 
 router.get('/new', (req, res) => {
-  res.render('users/new');
+  res.render('signup');
 });
 
 // Post to create new user (params are username/password).
@@ -16,7 +16,7 @@ router.post('/',
   passport.authenticate(
     'local-signup', {
         failureRedirect: 'users/new',
-        successRedirect: '/messages'
+        successRedirect: '/shows'
     }
   )
 );
@@ -27,7 +27,7 @@ router.post('/login',
   passport.authenticate(
     'local-login', {
         failureRedirect: '/',
-        successRedirect: '/messages'
+        successRedirect: '/shows'
     }
 ));
 

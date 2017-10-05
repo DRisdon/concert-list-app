@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+  <title>Document</title>
+</head>
+<body>
+<a href="/users/logout" class="logout">logout</a>
+  <h1 class="{{attendance}}">{{artist}} @ {{venue}}</h1>
+  <h2>{{event_date}}</h2>
+
+  <form id="attendance-form" data-id="{{id}}"required>
+  <label>Are you going?:</label><br/>
+  <select id="attendance-input">
+    <option disabled selected value value="{{attendance}}"> -- </option>
+    <option value="true">Yes</option>
+    <option value="false">Maybe</option>
+  </select>
+  <button type="submit" name="submit">Update</button>
+  </form>
+  <br />
+
+  <a class="{{songkick}}" href="{{url}}">View on SongKick</a><br/>
+
+<a class="edit-{{songkick}}" href="/shows/{{id}}/edit">Edit this show</a> <br/><br/>
+
+<a href="/shows">Back to your list</a>
+
+</body>
+</html>

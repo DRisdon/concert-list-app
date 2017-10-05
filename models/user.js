@@ -6,7 +6,7 @@ const User = {};
 User.create = (user) => {
   const passwordDigest = bcrypt.hashSync(user.password, 10);
   return db.oneOrNone(
-    'INSERT INTO users (email, password_digest, thread_id) VALUES ($1, $2, $3) RETURNING *;',
+    'INSERT INTO users (email, password_digest) VALUES ($1, $2) RETURNING *;',
     [user.email, passwordDigest, '']
   );
 };

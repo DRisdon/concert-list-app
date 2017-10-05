@@ -1,0 +1,37 @@
+body {
+  margin: 0 20%;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.text-center {
+  margin: 30% 20% 0 20%;
+}
+
+.true  {
+  color: green;
+}
+
+.manual {
+  visibility: hidden;
+}
+
+.edit-songkick {
+  visibility: hidden;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  border: none;
+  background-color: #8adff2;
+}
+
+.logout {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

@@ -1,0 +1,21 @@
+<!-- Log in page. -->
+
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <div>
+      <h1 class="text-center">Concert Wish List</h1><br/>
+      <form action="/users/login" method="post">
+        <input placeholder="username" name="user[email]" type="text"/><br/><br/>
+        <input placeholder="password" name="user[password]" type="password"/><br/><br/>
+        <input type="submit" value="Login">
+      </form>
+
+      <div>
+        <a href="/users/new"><small>Create a new account</small></a>
+      </div>
+    </div>
+  </body>
+</html>

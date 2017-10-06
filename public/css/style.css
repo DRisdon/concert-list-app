@@ -11,7 +11,7 @@ body {
 }
 
 .songkick {
-font-size: 26px;
+  font-size: 26px;
 }
 
 .show {
@@ -79,7 +79,7 @@ input[type="submit"] {
   border-top: .5px solid #50c6e0;
   color: #535353;
   outline: none;
-  transition: .1s all;
+  /*transition: .1s all;*/
 }
 
 input[type="submit"]:hover {
@@ -196,4 +196,12 @@ a:hover {
   bottom: 10px;
   position: fixed;
   width: 150px;
+}
+
+.new-show-form, .edit-show-form {
+  margin-top: 15%;
+}
+
+.showpage {
+  margin-top: 10%;
 }

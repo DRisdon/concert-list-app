@@ -17,6 +17,7 @@ router.get('/',
   }
 )
 
+// get manual entry form
 router.get('/manual-entry',
   auth.restrict,
   (req, res) => {
@@ -24,6 +25,7 @@ router.get('/manual-entry',
   }
 )
 
+// post manual entry
 router.post('/manual-entry',
   auth.restrict,
   Shows.manualAdd,
@@ -32,6 +34,8 @@ router.post('/manual-entry',
     res.json(show);
   }
 )
+
+// post show from songkick
 router.post('/sk-entry',
   auth.restrict,
   Shows.skAdd,
@@ -41,6 +45,7 @@ router.post('/sk-entry',
   }
 )
 
+// update attendance
 router.put('/change-attendance',
   auth.restrict,
   Shows.changeAttendance,
@@ -50,6 +55,7 @@ router.put('/change-attendance',
   }
 )
 
+// get search page
 router.get('/search',
   auth.restrict,
   (req, res) => {
@@ -57,6 +63,7 @@ router.get('/search',
   }
 )
 
+// get single show
 router.get('/:id',
   auth.restrict,
   Shows.findByID,
@@ -68,6 +75,7 @@ router.get('/:id',
   }
 )
 
+// get edit page
 router.get('/:id/edit',
   auth.restrict,
   Shows.findByID,
@@ -79,6 +87,7 @@ router.get('/:id/edit',
   }
 )
 
+// update a show
 router.put('/:id/edit',
   auth.restrict,
   Shows.manualEdit,
@@ -88,6 +97,7 @@ router.put('/:id/edit',
   }
 )
 
+// delete a show
 router.delete('/:id',
   auth.restrict,
   Shows.delete,
@@ -97,8 +107,7 @@ router.delete('/:id',
   }
 )
 
-// songkick
-
+// songkick api
 router.get('/search/:artist',
   auth.restrict,
   Shows.getArtistIdSK,

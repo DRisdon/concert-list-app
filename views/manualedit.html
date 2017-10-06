@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="/css/style.css">
   <script type="text/javascript" src="/js/jquery.js"></script>
   <script type="text/javascript" src="/js/script.js"></script>
-  <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
   <title>Concert Wish List</title>
 </head>
 
 <body>
   <a href="/users/logout" class="logout"><button>Sign Out</button></a>
-  <h5> Edit concert: </h5>
 
   <form class="edit-show-form">
+    <h5> Edit concert: </h5>
 
     <label>Date:</label>
     <input type="datetime-local" id="date-input" value="{{event_date}}">
@@ -31,17 +31,9 @@
 
     <label>City:</label>
     <input id="city-input" value="{{city}}">
-    <br/>
-
-    <label>Are you going?:</label><br/>
-    <select id="attendance-input">
-      <option disabled selected value value="{{attendance}}"> -- </option>
-      <option value="true">Yes</option>
-      <option value="false">Maybe</option>
-    </select>
     <br/><br/>
 
-      <input type="hidden" id="id-input" value={{id}}>
+    <input type="hidden" id="id-input" value={{id}}>
 
     <button type="submit">Submit</button>
     <br/><br/>

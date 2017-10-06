@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 const bodyParser = require('body-parser');
 const mustacheExpress = require('mustache-express');
@@ -46,6 +46,6 @@ app.use('/shows', require('./controllers/shows-controller'));
 app.use('/users', require('./controllers/users-controller'));
 
 // start the app.
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });

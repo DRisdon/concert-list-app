@@ -16,6 +16,7 @@ Shows.findAllForUser = (req, res, next) => {
     });
 }
 
+// get a single show by its id and the user id
 Shows.findByID = (req, res, next) => {
   const user_id = req.user.id;
   const id = req.params.id
@@ -27,6 +28,7 @@ Shows.findByID = (req, res, next) => {
     });
 }
 
+// add a show through the manual entry form
 Shows.manualAdd = (req, res, next) => {
   const user_id = req.user.id;
   const artist = req.body.artist;
@@ -46,6 +48,7 @@ Shows.manualAdd = (req, res, next) => {
   });
 }
 
+// change the attendance value for a show
 Shows.changeAttendance = (req, res, next) => {
   const user_id = req.user.id;
   const id = req.body.id;
@@ -60,6 +63,7 @@ Shows.changeAttendance = (req, res, next) => {
   });
 }
 
+// manually edit a show - only for manually created shows
 Shows.manualEdit = (req, res, next) => {
   const user_id = req.user.id;
   const id = req.params.id;
@@ -67,12 +71,11 @@ Shows.manualEdit = (req, res, next) => {
   const venue = req.body.venue;
   const city = req.body.city;
   const event_date = req.body.event_date;
-  const attendance = req.body.attendance;
 
   db.one(
     `UPDATE concerts
-    SET artist = $1, venue = $2, city = $3, event_date = $4, user_id = $5, attendance = $6
-    WHERE id = $7 and user_id = $5 RETURNING id`, [artist, venue, city, event_date, user_id, attendance, id]
+    SET artist = $1, venue = $2, city = $3, event_date = $4, user_id = $5
+    WHERE id = $6 and user_id = $5 AND songkick != 'songkick' RETURNING id`, [artist, venue, city, event_date, user_id, id]
   ).then((show) => {
     console.log('returned updated show: ', show);
     res.locals.show = show;
@@ -80,6 +83,7 @@ Shows.manualEdit = (req, res, next) => {
   });
 }
 
+// delete a show
 Shows.delete = (req, res, next) => {
   const id = req.params.id;
   db.none('DELETE FROM concerts WHERE id = $1', [id])
@@ -91,6 +95,7 @@ Shows.delete = (req, res, next) => {
 
 // songkick API
 
+// get an artist's songkick id
 Shows.getArtistIdSK = (req, res, next) => {
   const artistName = req.params.artist;
   axios({
@@ -108,6 +113,7 @@ Shows.getArtistIdSK = (req, res, next) => {
   });
 }
 
+// get all upcoming shows for an artist
 Shows.getShowsByArtistSK = (req, res, next) => {
   const artistId = res.locals.artistId;
   axios({
@@ -122,6 +128,7 @@ Shows.getShowsByArtistSK = (req, res, next) => {
   });
 }
 
+// add a songkick show
 Shows.skAdd = (req, res, next) => {
   const user_id = req.user.id;
   const artist = req.body.artist;

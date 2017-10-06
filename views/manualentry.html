@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
-    <title>Concert Wish List</title>
-  </head>
-  <body>
-    <a href="/users/logout" class="logout"><button>Sign Out</button></a>
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+  <title>Concert Wish List</title>
+</head>
+
+<body>
+  <a href="/users/logout" class="logout"><button>Sign Out</button></a>
+
+  <form class="new-show-form">
     <h5> Add a new concert: </h5>
 
-    <form class="new-show-form">
+    <label>Date:</label>
+    <input type="datetime-local" id="date-input">
+    <br />
 
-        <label>Date:</label>
-        <input type="datetime-local" id="date-input">
-        <br />
+    <label>Artist:</label>
+    <input id="artist-input">
+    <br />
 
-        <label>Artist:</label>
-        <input id="artist-input">
-        <br />
+    <label>Venue:</label>
+    <input id="venue-input">
+    <br />
 
-        <label>Venue:</label>
-        <input id="venue-input">
-        <br />
+    <label>City:</label>
+    <input id="city-input">
+    <br />
 
-        <label>City:</label>
-        <input id="city-input">
-        <br />
-
-        <label>Are you going?:</label><br/>
-        <select id="attendance-input">
+    <label>Are you going?:</label><br/>
+    <select id="attendance-input">
           <option disabled selected value> -- </option>
           <option value="true">Yes</option>
           <option value="false">Maybe</option>
         </select>
-        <br /><br/>
+    <br /><br/>
 
-        <button type="submit">Submit</button>
-        <br/><br/>
-        <a href="/shows">Cancel</a>
-    </form>
-    <a href="https://www.songkick.com/" target="_blank"><img class="songkick-logo" src="/assets/powered-by-songkick-pink.png"></a>
-  </body>
+    <button type="submit">Submit</button>
+    <br/><br/>
+    <a href="/shows">Cancel</a>
+  </form>
+  <a href="https://www.songkick.com/" target="_blank"><img class="songkick-logo" src="/assets/powered-by-songkick-pink.png"></a>
+</body>
+
 </html>

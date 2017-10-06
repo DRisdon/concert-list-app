@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <title>Document</title>
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+  <title>Concert Wish List</title>
 </head>
+
 <body>
-  <a href="/users/logout" class="logout">logout</a>
-  <h1>SHOWS</h1>
-  <a href="/shows/manualentry">Add a new show manually</a><br/>
+  <a href="/users/logout" class="logout"><button>Sign Out</button></a>
+  <div class="key">
+    <p class="attend-key">Attending</p>
+    <p class="maybe-key">Maybe Attending</p>
+  </div>
+  <h1>Your Shows</h1>
   <a href="/shows/search">Add a new show from SongKick</a><br/><br/>
+  <a href="/shows/manual-entry">Add a new show manually</a><br/><br/>
   <div id="shows">
     {{#shows}}
-    <a href="/shows/{{id}}"<p class="show {{attendance}}" data-id="{{id}}">{{artist}} @ {{venue}} - {{event_date}}</p></a>
+    <a href="/shows/{{id}}">
+      <p class="show {{attendance}}" data-id="{{id}}" data-attendance="{{attendance}}">{{artist}} @ {{venue}}, {{city}} <br/> {{event_date}}</p>
+    </a>
     {{/shows}}
   </div>
-
+<a href="https://www.songkick.com/" target="_blank"><img class="songkick-logo" src="/assets/powered-by-songkick-pink.png"></a>
 </body>
+
 </html>

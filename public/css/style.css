@@ -1,15 +1,60 @@
 body {
-  margin: 0 20%;
+  margin: 10px 20%;
   text-align: center;
-  font-family: sans-serif;
+  color: #535353;
+  font-family: 'Droid Sans', sans-serif;
+  background-color: #fefefe;
 }
 
 .text-center {
   margin: 20% 20% 0 20%;
 }
 
-.true  {
-  color: green;
+.songkick {
+font-size: 26px;
+}
+
+.show {
+  color: #535353;
+  margin: 0;
+  padding: 15px 0;
+  font-size: 20px;
+  font-family: 'Droid Sans', sans-serif;
+  border-radius: 5px;
+  background-color: #8adff2;
+  border-top: .5px solid #50c6e0;
+  transition: .1s all;
+}
+
+.true {
+  background-color: #a3e6bd;
+  border-top: .5px solid #8bc4a2;
+}
+
+.true:hover {
+  background-color: #92d1ab;
+}
+
+.false {
+  background-color: #feb8b8;
+  border-top: .5px solid #da9c9c;
+}
+
+.false:hover {
+  background-color: #f1afaf;
+}
+
+.sk {
+  background-color: #8adff2;
+  border-top: .5px solid #50c6e0;
+}
+
+.sk:hover {
+  background-color: #58d8f5;
+}
+
+h3.true {
+  visibility: hidden;
 }
 
 .manual {
@@ -23,15 +68,132 @@ body {
 input {
   padding: 10px;
   margin-bottom: 10px;
+  font-family: 'Droid Sans', sans-serif;
 }
 
 input[type="submit"] {
   border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #8adff2;
+  border-top: .5px solid #50c6e0;
+  color: #535353;
+  outline: none;
+  transition: .1s all;
+}
+
+input[type="submit"]:hover {
+  background-color: #58d8f5;
+  cursor: pointer;
+}
+
+input[type="submit"]:active {
   background-color: #8adff2;
 }
 
+button {
+  border: none;
+  border-radius: 5px;
+  width: 120px;
+  padding: 10px 20px;
+  background-color: #8adff2;
+  border-top: .5px solid #50c6e0;
+  color: #535353;
+  font-family: 'Droid Sans', sans-serif;
+  outline: none;
+  transition: .1s all;
+}
+
+button:hover {
+  background-color: #58d8f5;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #8adff2;
+}
+
+.attending-sk {
+  background-color: #a3e6bd;
+  border: .5px solid #8bc4a2;
+  margin-top: 5px;
+}
+
+.attending-sk:hover {
+  background-color: #92d1ab;
+}
+
+.maybe-sk {
+  background-color: #feb8b8;
+  border: .5px solid #da9c9c;
+  margin-top: 5px;
+}
+
+.maybe-sk:hover {
+  background-color: #f1afaf;
+}
+
+select {
+  cursor: pointer;
+}
+
+a {
+  color: #a0a9f6;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #7d8af7;
+  text-decoration: none;
+}
+
 .logout {
-  position: absolute;
+  position: fixed;
   right: 10px;
   top: 10px;
+  position: fixed;
+}
+
+.key {
+  position: fixed;
+  left: 10px;
+  top: 0;
+  font-size: 12px;
+  color: #535353;
+}
+
+.attend-key {
+  background-color: #a3e6bd;
+  border: 1px solid #8bc4a2;
+  padding: 1px;
+  margin-bottom: 0;
+  border-radius: 2px;
+}
+
+.maybe-key {
+  margin-top: 0;
+  padding: 1px;
+  background-color: #feb8b8;
+  border: 1px solid #da9c9c;
+  border-radius: 2px;
+}
+
+.search-form {
+  margin-top: 30%;
+}
+
+.artist-search {
+  width: 500px;
+}
+
+.error {
+  color: #feb8b8;
+}
+
+.songkick-logo {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  position: fixed;
+  width: 150px;
 }

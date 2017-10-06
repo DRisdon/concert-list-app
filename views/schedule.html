@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+  <script src="/js/moment.js"></script>
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+  <title>Concert Wish List</title>
+</head>
+
+<body>
+  <a href="/users/logout" class="logout"><button>Sign Out</button></a>
+  <h1>Upcoming {{artistName}} Shows</h1>
+  <a href="/shows/search">Search for another artist</a><br/>
+  <a href="/shows">Back to your list</a><br/><br/>
+  <div id="shows" data-artist="{{artistName}}">
+    {{#shows}}
+      <div class="sk show">
+        {{venue.displayName}}, {{location.city}} <br/> {{start.eventdate}}<br/>
+        <button class="attending-sk confirm" data-venue="{{venue.displayName}}" data-city="{{location.city}}" data-datetime="{{start.datetime}}" data-url="{{uri}}">Attending</button>
+        <button class="maybe-sk confirm" data-venue="{{venue.displayName}}" data-city="{{location.city}}" data-datetime="{{start.datetime}}" data-url="{{uri}}">Maybe</button>
+      </div>
+    {{/shows}}
+  </div>
+<a href="https://www.songkick.com/" target="_blank"><img class="songkick-logo" src="/assets/powered-by-songkick-pink.png"></a>
+</body>
+
+</html>

@@ -17,14 +17,14 @@ router.get('/',
   }
 )
 
-router.get('/manualentry',
+router.get('/manual-entry',
   auth.restrict,
   (req, res) => {
     res.render('manualentry');
   }
 )
 
-router.post('/manualentry',
+router.post('/manual-entry',
   auth.restrict,
   Shows.manualAdd,
   (req, res) => {
@@ -32,14 +32,29 @@ router.post('/manualentry',
     res.json(show);
   }
 )
+router.post('/sk-entry',
+  auth.restrict,
+  Shows.skAdd,
+  (req, res) => {
+    const show = res.locals.show;
+    res.json(show);
+  }
+)
 
-router.put('/changeattendance',
-auth.restrict,
-Shows.changeAttendance,
-(req, res) => {
-  const show = res.locals.show;
-  res.json(show);
-}
+router.put('/change-attendance',
+  auth.restrict,
+  Shows.changeAttendance,
+  (req, res) => {
+    const show = res.locals.show;
+    res.json(show);
+  }
+)
+
+router.get('/search',
+  auth.restrict,
+  (req, res) => {
+    res.render('search');
+  }
 )
 
 router.get('/:id',
@@ -65,12 +80,56 @@ router.get('/:id/edit',
 )
 
 router.put('/:id/edit',
-auth.restrict,
-Shows.manualEdit,
-(req, res) => {
-  const show = res.locals.show;
-  res.json(show);
-}
+  auth.restrict,
+  Shows.manualEdit,
+  (req, res) => {
+    const show = res.locals.show;
+    res.json(show);
+  }
+)
+
+router.delete('/:id',
+  auth.restrict,
+  Shows.delete,
+  (req, res) => {
+    const show = res.locals.show;
+    res.json(show);
+  }
+)
+
+// songkick
+
+router.get('/search/:artist',
+  auth.restrict,
+  Shows.getArtistIdSK,
+  Shows.getShowsByArtistSK,
+  (req, res) => {
+    const shows = res.locals.shows;
+    // artist has no shows
+    if (shows === undefined) {
+      res.render('search', {
+        text: 'Error: artist has no upcoming shows'
+      })
+    }
+    // convert timestamps to readable format
+    shows.forEach((show) => {
+      if (show.start.datetime === null) {
+        // display date
+        show.start.eventdate = moment(`${show.start.date}`).format('dddd, MMMM Do YYYY');
+        // date to enter into database
+        show.start.datetime = moment(`${show.start.date}`).format('YYYY-MM-DD');
+      } else {
+      show.start.eventdate = `${show.start.datetime}`
+      show.start.eventdate = moment(show.start.eventdate.substring(0, show.start.eventdate.length - 5))
+        .format('dddd, MMMM Do YYYY, h:mm a');
+      }
+    });
+    const artistName = res.locals.artistName;
+    res.render('schedule', {
+      shows: shows,
+      artistName: artistName
+    });
+  }
 )
 
 module.exports = router;

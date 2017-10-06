@@ -3,46 +3,51 @@
 
 <head>
   <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <script type="text/javascript" src="/js/jquery.js"></script>
   <script type="text/javascript" src="/js/script.js"></script>
-  <title></title>
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+  <title>Concert Wish List</title>
 </head>
 
 <body>
-  <a href="/users/logout" class="logout">logout</a>
+  <a href="/users/logout" class="logout"><button>Sign Out</button></a>
   <h5> Edit concert: </h5>
 
   <form class="edit-show-form">
 
     <label>Date:</label>
     <input type="datetime-local" id="date-input" value="{{event_date}}">
-    <br />
+    <br/>
 
     <label>Artist:</label>
     <input id="artist-input" value="{{artist}}">
-    <br />
+    <br/>
 
     <label>Venue:</label>
     <input id="venue-input" value="{{venue}}">
-    <br />
+    <br/>
 
     <label>City:</label>
     <input id="city-input" value="{{city}}">
-    <br />
+    <br/>
 
     <label>Are you going?:</label><br/>
-    <select>
+    <select id="attendance-input">
       <option disabled selected value value="{{attendance}}"> -- </option>
       <option value="true">Yes</option>
       <option value="false">Maybe</option>
     </select>
-    <br />
+    <br/><br/>
 
-      <input type="hidden" id="id-input" value={{id}} />
+      <input type="hidden" id="id-input" value={{id}}>
 
     <button type="submit">Submit</button>
+    <br/><br/>
+    <a href="/shows/{{id}}">Cancel</a>
   </form>
+  <a href="https://www.songkick.com/" target="_blank"><img class="songkick-logo" src="/assets/powered-by-songkick-pink.png"></a>
 </body>
 
 </html>

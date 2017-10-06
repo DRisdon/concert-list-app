@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <title>Concert Wish List</title>
+  </head>
+  <body>
+    <a href="/users/logout" class="logout"><button>Sign Out</button></a>
+      <div>
+
+        <form class="search-form">
+          <h1>Search for an artist:</h1>
+          <p class="error">{{text}}</p>
+          <input class="artist-search" placeholder="Search for an artist on SongKick" name="input" type="text" autocomplete="off" autofocus/>
+          <input type="submit" value="Search">
+          </form>
+      </div>
+      <br/>
+      <a href="/shows">Back to your list</a>
+      <a href="https://www.songkick.com/" target="_blank"><img class="songkick-logo" src="/assets/powered-by-songkick-pink.png"></a>
+  </body>
+</html>

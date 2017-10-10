@@ -37,9 +37,7 @@ app.use(auth.passportSession);
 app.use(cookieParser());
 
 // root route.
-app.get('/', (req, res) => {
-  res.render('login');
-})
+app.get('/', (req, res) => res.redirect('/shows'));
 
 // controllers
 app.use('/shows', require('./controllers/shows-controller'));

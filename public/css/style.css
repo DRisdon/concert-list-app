@@ -1,9 +1,13 @@
 body {
-  margin: 10px 20%;
+  margin: 0;
   text-align: center;
   color: #535353;
   font-family: 'Droid Sans', sans-serif;
-  background-color: #fefefe;
+  background-color: #f5f4f5;
+}
+
+.container {
+  margin: 10px 20%;
 }
 
 .text-center {
@@ -35,6 +39,10 @@ body {
   background-color: #92d1ab;
 }
 
+.true:active {
+  background-color: #a3e6bd;
+}
+
 .false {
   background-color: #feb8b8;
   border-top: .5px solid #da9c9c;
@@ -42,6 +50,10 @@ body {
 
 .false:hover {
   background-color: #f1afaf;
+}
+
+.false.active {
+  background-color: #feb8b8;
 }
 
 .sk {
@@ -88,7 +100,6 @@ input[type="submit"] {
   border-top: .5px solid #50c6e0;
   color: #535353;
   outline: none;
-  /*transition: .1s all;*/
 }
 
 input[type="submit"]:hover {

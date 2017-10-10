@@ -109,7 +109,9 @@ Shows.getArtistIdSK = (req, res, next) => {
     next();
   }).catch(err => {
     console.log(`error fetching artist data: ${err}`);
-    res.render('search', {text: 'Error: not a valid artist'})
+    res.render('search', {
+      text: 'Error: not a valid artist'
+    })
   });
 }
 

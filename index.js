@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
   res.render('login');
 })
 
-// Hook up controllers yourself.
+// controllers
 app.use('/shows', require('./controllers/shows-controller'));
 app.use('/users', require('./controllers/users-controller'));
 

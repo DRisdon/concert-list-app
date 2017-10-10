@@ -4,7 +4,7 @@ Try the app [HERE](http://concert-wishlist.herokuapp.com/)
 
 **TECH AND APPROACH**
 
-The app was built using the [Songkick API](https://www.songkick.com/developer). The API allows for searching for an artist by name, which which gives an artist ID, which can be used to then search for that artist's tour schedule. The user can search for an artist, and then choose from a list of shows which one they are interested in. They can choose whether they are definitely attending or just interested. Additionally the user can manually enter information about shows that might not be listed on Songkick, such as those by smaller artists.
+The app was built using the [Songkick API](https://www.songkick.com/developer), which provides tour dates for a large number of artists. With this app, the user can search for an artist, and then choose from a list of shows which one they are interested in. They can additionally choose whether they are definitely attending or just interested in going. The user can also manually enter information about shows that might not be listed on Songkick, such as those by smaller artists.
 
 When the user searches for an artist, two middleware functions are called, returning first the artist ID, and then using that artist ID to find a list of shows. The user will then choose a show to store into the database, or just return to their list or the search page. Timestamps between Songkick and user entry may vary, so [Moment](https://momentjs.com/) is used to format them for consistency in the DB.
 
